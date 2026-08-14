@@ -1,0 +1,75 @@
+{
+  "method": "twstream",
+  "seed": 53,
+  "ari": 0.8144786654428136,
+  "nmi": 0.8357563300448492,
+  "runtime_ms_per_1000": 186.71471333335728,
+  "online_seconds": 1.4849428850002369,
+  "macro_seconds": 0.1954895349999788,
+  "persistent_numeric_mb": 0.6882476806640625,
+  "allocated_numeric_mb": 0.8056640625,
+  "incremental_peak_rss_mb": 3.85546875,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.6373434596175506,
+      "nmi": 0.6833604908250169
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.15787411999663084,
+      "nmi": 0.26929727997215586
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.72294311419226,
+      "nmi": 0.7380350460953279
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.9976686297360674,
+      "nmi": 0.9953578234662925
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "n": 9000,
+    "d": 256,
+    "data_seed": 2026,
+    "model_seed": 53,
+    "proposed_projection_seed": null,
+    "projection_varies_across_proposed_repetitions": true,
+    "labels_used_online": false,
+    "common_causal_standardization_outside_timing": true,
+    "shared_macro_evaluator_known_k": 4,
+    "implementation_scope": "author_implementation_common_protocol"
+  }
+}

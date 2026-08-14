@@ -1,0 +1,5 @@
+dataset,n_seeds,evaluated_observations_total,mean_rank,sd_between_run_mean_rank,rank_sd_pooled,max_rank_observed,pct_observations_rank_32,sampling_acceptance_pct,min_rank_observed
+covertype,10,5760120,5.075849808684541,0.2940424974477306,1.6833354414694652,9,0.0,47.298300207224635,4
+electricity,10,443120,4.368550279833905,0.02363572759179853,1.14714819904246,8,0.0,56.39742231638418,4
+tweeteval_sentiment,10,578990,8.0,0.0,0.0,8,0.0,60.59032705053507,8
+synthetic_gmm,10,80000,8.0,0.0,0.0,8,0.0,60.82555555555555,8

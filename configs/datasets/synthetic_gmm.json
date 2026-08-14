@@ -1,0 +1,54 @@
+{
+  "dataset": "synthetic_gmm",
+  "n_clusters": 4,
+  "window_size": 1000,
+  "projection_dim": 32,
+  "initial_rank": 8,
+  "min_rank": 4,
+  "max_rank": 32,
+  "microcluster_radius": 1.5,
+  "decay": 0.95,
+  "threshold_smoothing": 0.9,
+  "leverage_regularization": 0.001,
+  "retained_energy": 0.95,
+  "projection_sparsity": 3,
+  "max_microclusters": 200,
+  "seeds": [
+    7,
+    13,
+    19,
+    23,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53
+  ],
+  "baseline_settings": {
+    "clustream": {
+      "max_microclusters": 200,
+      "radius": 1.5,
+      "decay": 1.0
+    },
+    "denstream": {
+      "epsilon": 1.5,
+      "beta": 0.2,
+      "mu": 6.0,
+      "lambda": 0.01,
+      "max_microclusters": 200
+    },
+    "streamkmpp": {
+      "coreset_size": 500,
+      "buffer_size": 1000
+    }
+  },
+  "study_stream": {
+    "path": "data/rank_validation/processed/synthetic_gmm.npz",
+    "shape": [
+      9000,
+      256
+    ],
+    "use": "fixed realized Synthetic GMM stream used in the original benchmark and reused for the reviewer-requested controlled time-resolved analysis"
+  }
+}

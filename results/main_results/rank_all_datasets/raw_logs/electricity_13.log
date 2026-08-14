@@ -1,0 +1,1 @@
+{"dataset": "electricity", "method": "proposed", "seed": 13, "ari": 0.00585996428801341, "nmi": 0.0011928634779469437, "elapsed_seconds": 0.5788333680002324, "rank_mean": 4.361076006499368, "rank_std": 1.1462670472136678, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.5661855579096046}

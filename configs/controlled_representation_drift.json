@@ -1,0 +1,88 @@
+{
+  "protocol_name": "controlled_representation_drift",
+  "dataset": {
+    "file": "data/controlled/representation_drift_stream.npz",
+    "standardized_file": "data/controlled/representation_drift_standardized.npz",
+    "data_seed": 2026,
+    "n_samples": 9000,
+    "n_features": 256,
+    "n_clusters": 4,
+    "separation": 3.6,
+    "informative_noise": 0.55,
+    "nuisance_scale": 1.35,
+    "change_points": [
+      3000,
+      6000
+    ],
+    "latent_nuisance_rank": [
+      4,
+      10,
+      16
+    ],
+    "description": "Controlled Gaussian-mixture representation-drift stream used for mechanism analysis."
+  },
+  "evaluation": {
+    "chunk_size": 1000,
+    "warmup_chunks": 1,
+    "seeds": [
+      7,
+      13,
+      19,
+      23,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53
+    ],
+    "projection_seed_policy": "Within each Proposed/Fixed pair the projection seed is identical; it varies across repetitions.",
+    "development_data_seed": 2025,
+    "labels_used_online": false
+  },
+  "proposed_model": {
+    "projection_dim": 32,
+    "projection_mode": "sparse",
+    "window_size": 1000,
+    "initial_rank": 8,
+    "min_rank": 4,
+    "max_rank": 32,
+    "microcluster_radius": 1.5,
+    "decay": 0.95,
+    "threshold_smoothing": 0.9,
+    "leverage_regularization": 0.001,
+    "retained_energy": 0.95,
+    "projection_sparsity": 3,
+    "max_microclusters": 200,
+    "basis_update_interval": 100,
+    "rank_tolerance": 0.04,
+    "stable_intervals_before_shrink": 4,
+    "uniform_floor": 0.05,
+    "leverage_mode": "sample",
+    "leverage_sampling_rate": 0.65,
+    "min_sampling_probability": 0.15,
+    "max_sampling_probability": 1.0,
+    "min_leverage_weight": 0.35,
+    "max_leverage_weight": 3.0,
+    "use_adapted_representation_for_clustering": true,
+    "prune_policy": "utility",
+    "leverage_radius_strength": 0.0,
+    "projection_seed": null
+  },
+  "recent_methods": {
+    "twstream": {
+      "implementation": "author implementation based on TWStream method/source design",
+      "radius_rule": "80th percentile of 6-NN distance on unlabeled warm-up observations",
+      "radius_value": 10.411281070423867,
+      "k": 8,
+      "lambda": 0.0028
+    },
+    "fra_art": {
+      "implementation": "author implementation based on the FRA-ART SIBF/Fuzzy-ART method",
+      "fractional_order": 0.5,
+      "vigilance": 0.8,
+      "choice": 0.001,
+      "learning_rate": 1.0
+    }
+  }
+}

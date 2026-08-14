@@ -1,0 +1,1 @@
+{"dataset": "synthetic_gmm", "method": "proposed", "seed": 31, "ari": 0.030017893048753564, "nmi": 0.034150727848987754, "elapsed_seconds": 0.21887681800035352, "rank_mean": 8.0, "rank_std": 0.0, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.6032222222222222}

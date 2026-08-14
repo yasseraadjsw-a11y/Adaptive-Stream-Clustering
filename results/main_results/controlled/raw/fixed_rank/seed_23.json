@@ -1,0 +1,84 @@
+{
+  "variant": "fixed_rank",
+  "seed": 23,
+  "projection_seed": 23,
+  "ari": 0.7879537214264346,
+  "nmi": 0.7920892755166574,
+  "runtime_ms_per_1000": 110.06628055525248,
+  "online_seconds": 0.7755047469991041,
+  "macro_seconds": 0.21509177799816825,
+  "rank_mean": 8.0,
+  "rank_change_count": 0,
+  "final_rank": 8,
+  "projection_bytes": 65536,
+  "sketch_basis_probability_bytes": 274176,
+  "microcluster_bytes": 57600,
+  "persistent_numeric_bytes": 397312,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 0.994575677580064,
+      "nmi": 0.9905280491278504
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.9292000825877992,
+      "nmi": 0.8994416653834321
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.9785160029802374,
+      "nmi": 0.9662600090864251
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.9813658293611447,
+      "nmi": 0.9690378975065989
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.4274733229461571,
+      "nmi": 0.4573803769301331
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.49148569434302297,
+      "nmi": 0.5239547140538231
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.5010131616130513,
+      "nmi": 0.5301114920449965
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "data_seed": 2026,
+    "projection_paired_within_repetition": true,
+    "projection_varies_across_repetitions": true,
+    "projection_seed": 23,
+    "model_seed": 23,
+    "causal_standardization_outside_timer": true,
+    "dataset_loaded_outside_timer": true,
+    "fresh_model_per_run": true,
+    "fresh_interpreter_per_run": false,
+    "gc_before_each_run": true,
+    "labels_used_online": false,
+    "known_k_macro_evaluation_only": 4,
+    "implementation_scope": "study_implementation_common_protocol"
+  },
+  "method": "fixed_rank"
+}

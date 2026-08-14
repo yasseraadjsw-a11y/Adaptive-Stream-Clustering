@@ -1,0 +1,3 @@
+# Preserve the exact released bytes on every operating system.
+# The package verification uses byte-level SHA-256 fingerprints.
+* -text

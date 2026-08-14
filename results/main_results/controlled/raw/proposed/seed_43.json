@@ -1,0 +1,84 @@
+{
+  "variant": "proposed",
+  "seed": 43,
+  "projection_seed": 43,
+  "ari": 0.9256842850609506,
+  "nmi": 0.91825241497105,
+  "runtime_ms_per_1000": 110.91570433311266,
+  "online_seconds": 0.7809157689989661,
+  "macro_seconds": 0.21732556999904773,
+  "rank_mean": 11.425444444444445,
+  "rank_change_count": 6,
+  "final_rank": 12,
+  "projection_bytes": 65536,
+  "sketch_basis_probability_bytes": 275232,
+  "microcluster_bytes": 57600,
+  "persistent_numeric_bytes": 398368,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 0.9884288578673563,
+      "nmi": 0.9828542606939182
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 0.9921427896035967,
+      "nmi": 0.9859213255804395
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.9449361447182631,
+      "nmi": 0.9269106993437021
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.966276837572294,
+      "nmi": 0.9501152095293984
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.9863847903511368,
+      "nmi": 0.977372556011366
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.9687097258435574,
+      "nmi": 0.949780909360616
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.9475480742366817,
+      "nmi": 0.9204345234168881
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.6110470602947184,
+      "nmi": 0.6526298358320712
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "data_seed": 2026,
+    "projection_paired_within_repetition": true,
+    "projection_varies_across_repetitions": true,
+    "projection_seed": 43,
+    "model_seed": 43,
+    "causal_standardization_outside_timer": true,
+    "dataset_loaded_outside_timer": true,
+    "fresh_model_per_run": true,
+    "fresh_interpreter_per_run": false,
+    "gc_before_each_run": true,
+    "labels_used_online": false,
+    "known_k_macro_evaluation_only": 4,
+    "implementation_scope": "study_implementation_common_protocol"
+  },
+  "method": "proposed"
+}

@@ -1,0 +1,11 @@
+# Reproducible Python 3.11 environment used by the research package.
+numpy>=1.26,<1.27
+scipy>=1.11,<1.12
+scikit-learn>=1.4,<1.5
+matplotlib>=3.8,<3.9
+pandas>=2.1,<2.3
+psutil>=5.9,<6.1
+# Optional acceleration paths are exercised when Numba is available; it is
+# declared here so a clean installation follows the tested code path.
+numba>=0.59,<0.61
+pytest>=8,<9

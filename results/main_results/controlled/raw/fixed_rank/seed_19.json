@@ -1,0 +1,84 @@
+{
+  "variant": "fixed_rank",
+  "seed": 19,
+  "projection_seed": 19,
+  "ari": 0.7572098830447598,
+  "nmi": 0.7625784436860275,
+  "runtime_ms_per_1000": 111.14150322221879,
+  "online_seconds": 0.7423331989984945,
+  "macro_seconds": 0.25794033000147465,
+  "rank_mean": 8.0,
+  "rank_change_count": 0,
+  "final_rank": 8,
+  "projection_bytes": 65536,
+  "sketch_basis_probability_bytes": 274176,
+  "microcluster_bytes": 57600,
+  "persistent_numeric_bytes": 397312,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 0.9861464766210092,
+      "nmi": 0.9772367177024132
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 0.997354339242336,
+      "nmi": 0.9952997888594788
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.9897298909997025,
+      "nmi": 0.9822353742326084
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.9778139965881142,
+      "nmi": 0.9688764809881835
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.9842114107530765,
+      "nmi": 0.9751718856094215
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.2952862591045885,
+      "nmi": 0.3242103738444869
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.4325535066404904,
+      "nmi": 0.45327269952463495
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.3945831844087605,
+      "nmi": 0.4243242287269922
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "data_seed": 2026,
+    "projection_paired_within_repetition": true,
+    "projection_varies_across_repetitions": true,
+    "projection_seed": 19,
+    "model_seed": 19,
+    "causal_standardization_outside_timer": true,
+    "dataset_loaded_outside_timer": true,
+    "fresh_model_per_run": true,
+    "fresh_interpreter_per_run": false,
+    "gc_before_each_run": true,
+    "labels_used_online": false,
+    "known_k_macro_evaluation_only": 4,
+    "implementation_scope": "study_implementation_common_protocol"
+  },
+  "method": "fixed_rank"
+}

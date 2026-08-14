@@ -1,0 +1,13 @@
+name: adaptive-stream-clustering
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.26
+  - scipy=1.11
+  - scikit-learn=1.4
+  - matplotlib=3.8
+  - pandas>=2.1,<2.3
+  - psutil>=5.9,<6.1
+  - numba>=0.59,<0.61
+  - pytest>=8,<9

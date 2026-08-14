@@ -1,0 +1,44 @@
+{
+  "schema": "modern_methods_all_datasets_v1",
+  "purpose": "Executable all-dataset TWStream and FRA-ART extension reported with the unchanged original Proposed results.",
+  "seeds": [7, 13, 19, 23, 31, 37, 41, 43, 47, 53],
+  "methods": {
+    "twstream": {"k_neighbors": 8, "lambda": 0.0028},
+    "fra_art": {"a": 0.5, "vigilance": 0.8, "choice": 0.001, "beta": 1.0}
+  },
+  "datasets": {
+    "covertype": {
+      "path": "data/rank_validation/processed/covertype.npz",
+      "n_clusters": 7,
+      "window_size": 1000,
+      "preprocessing": "causal_standardization",
+      "calibration_rows": 1000
+    },
+    "electricity": {
+      "path": "data/rank_validation/processed/electricity.npz",
+      "n_clusters": 2,
+      "window_size": 1000,
+      "preprocessing": "causal_standardization",
+      "calibration_rows": 1000
+    },
+    "tweeteval": {
+      "path": "data/rank_validation/processed/tweeteval_sentiment.npz",
+      "n_clusters": 3,
+      "window_size": 2000,
+      "preprocessing": "identity_256d_study_representation",
+      "calibration_rows": 1000
+    },
+    "synthetic_gmm": {
+      "path": "data/rank_validation/processed/synthetic_gmm.npz",
+      "n_clusters": 4,
+      "window_size": 1000,
+      "preprocessing": "causal_standardization",
+      "calibration_rows": 1000
+    }
+  },
+  "evaluation": {
+    "coverage": "all windows",
+    "macro_boundary": "common known-K weighted-summary evaluator",
+    "labels_used_online": false
+  }
+}

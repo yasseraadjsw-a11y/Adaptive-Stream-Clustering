@@ -1,0 +1,61 @@
+{
+  "schema_version": "study_assets_v1",
+  "assets": {
+    "covertype": {
+      "path": "data/rank_validation/processed/covertype.npz",
+      "sha256": "fb42a585883a4959b4a39b539cd9c214604762f79e71b9e858de908f01d492ba",
+      "size_bytes": 13210555,
+      "x_shape": [
+        581012,
+        54
+      ],
+      "y_rows": 581012,
+      "expected_x_shape": [
+        581012,
+        54
+      ]
+    },
+    "electricity": {
+      "path": "data/rank_validation/processed/electricity.npz",
+      "sha256": "86394e30035cefa2d438875c284330f295179a08b249e14b436c5845567e1d71",
+      "size_bytes": 1051891,
+      "x_shape": [
+        45312,
+        8
+      ],
+      "y_rows": 45312,
+      "expected_x_shape": [
+        45312,
+        8
+      ]
+    },
+    "tweeteval_sentiment_projected": {
+      "path": "data/rank_validation/processed/tweeteval_sentiment.npz",
+      "sha256": "83c8b3c392ceae11560bab9a8f5e13c6272161787e789e62202c4c1a985c94b6",
+      "size_bytes": 57140951,
+      "x_shape": [
+        59899,
+        256
+      ],
+      "y_rows": 59899,
+      "expected_x_shape": [
+        59899,
+        256
+      ]
+    },
+    "synthetic_gmm": {
+      "path": "data/rank_validation/processed/synthetic_gmm.npz",
+      "sha256": "586fbb789dbd8f7285803bc19eb0586660236108014a4b010c35a80c2a62cf66",
+      "size_bytes": 8562061,
+      "x_shape": [
+        9000,
+        256
+      ],
+      "y_rows": 9000,
+      "expected_x_shape": [
+        9000,
+        256
+      ]
+    }
+  }
+}

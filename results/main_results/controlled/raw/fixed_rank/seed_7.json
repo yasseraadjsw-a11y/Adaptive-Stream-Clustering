@@ -1,0 +1,84 @@
+{
+  "variant": "fixed_rank",
+  "seed": 7,
+  "projection_seed": 7,
+  "ari": 0.8811522963306457,
+  "nmi": 0.8624191024591414,
+  "runtime_ms_per_1000": 96.83600344447365,
+  "online_seconds": 0.6653787250015739,
+  "macro_seconds": 0.20614530599868885,
+  "rank_mean": 8.0,
+  "rank_change_count": 0,
+  "final_rank": 8,
+  "projection_bytes": 65536,
+  "sketch_basis_probability_bytes": 274176,
+  "microcluster_bytes": 57600,
+  "persistent_numeric_bytes": 397312,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 0.917383245625201,
+      "nmi": 0.8943575593567542
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 0.9036770386922647,
+      "nmi": 0.889064450021874
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.920919107040774,
+      "nmi": 0.896995675777458
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.9892309858174003,
+      "nmi": 0.98312656935522
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.9871468105605173,
+      "nmi": 0.9789540242854267
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.6801872565460174,
+      "nmi": 0.6533284495844318
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.7375514605429969,
+      "nmi": 0.724963545050519
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.9131224658199943,
+      "nmi": 0.8785625462414477
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "data_seed": 2026,
+    "projection_paired_within_repetition": true,
+    "projection_varies_across_repetitions": true,
+    "projection_seed": 7,
+    "model_seed": 7,
+    "causal_standardization_outside_timer": true,
+    "dataset_loaded_outside_timer": true,
+    "fresh_model_per_run": true,
+    "fresh_interpreter_per_run": false,
+    "gc_before_each_run": true,
+    "labels_used_online": false,
+    "known_k_macro_evaluation_only": 4,
+    "implementation_scope": "study_implementation_common_protocol"
+  },
+  "method": "fixed_rank"
+}

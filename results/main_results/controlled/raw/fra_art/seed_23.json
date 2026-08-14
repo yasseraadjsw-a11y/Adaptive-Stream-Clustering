@@ -1,0 +1,81 @@
+{
+  "method": "fra_art",
+  "seed": 23,
+  "ari": 0.609769069508618,
+  "nmi": 0.6881444928818845,
+  "runtime_ms_per_1000": 2940.7246905567363,
+  "online_seconds_shared_deterministic": 26.17120047800563,
+  "macro_seconds": 0.295321737004997,
+  "persistent_numeric_mb": 31.1180419921875,
+  "allocated_numeric_mb": 87.95928955078125,
+  "incremental_peak_rss_mb": 125.20703125,
+  "peak_process_rss_mb": 311.54296875,
+  "diagnostics": {
+    "categories": 3184,
+    "prototype_bytes": 26083328,
+    "category_raw_summary_bytes": 6546304,
+    "persistent_numeric_bytes": 32629632,
+    "allocated_numeric_bytes": 92232000
+  },
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.3303459526651289,
+      "nmi": 0.5485171939806244
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.7144206633613811,
+      "nmi": 0.8479924261539294
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.5023031549412205,
+      "nmi": 0.5454417958628875
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 2.94086875669922e-05,
+      "nmi": 0.0020098412116047247
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.3310533764136459,
+      "nmi": 0.5611946858460294
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "n": 9000,
+    "d": 256,
+    "data_seed": 2026,
+    "model_seed": 23,
+    "labels_used_online": false,
+    "common_causal_standardization_outside_timing": true,
+    "shared_macro_evaluator_known_k": 4,
+    "implementation_scope": "author_implementation_common_protocol"
+  }
+}

@@ -1,0 +1,1 @@
+{"dataset": "tweeteval_sentiment", "method": "proposed", "seed": 37, "ari": -0.001579355165415115, "nmi": 0.0014257606803486952, "elapsed_seconds": 3.5516104479993373, "rank_mean": 8.0, "rank_std": 0.0, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.6080735905440825}

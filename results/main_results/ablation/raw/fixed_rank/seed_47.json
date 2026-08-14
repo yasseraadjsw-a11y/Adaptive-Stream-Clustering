@@ -1,0 +1,82 @@
+{
+  "variant": "fixed_rank",
+  "seed": 47,
+  "projection_seed": 47,
+  "ari": 0.8319586376070618,
+  "nmi": 0.8111656166567833,
+  "runtime_ms_per_1000": 109.80485266665913,
+  "online_seconds": 0.7913495519997014,
+  "macro_seconds": 0.1968941220002307,
+  "rank_mean": 8.0,
+  "rank_change_count": 0,
+  "final_rank": 8,
+  "projection_bytes": 65536,
+  "sketch_basis_probability_bytes": 274176,
+  "microcluster_bytes": 57600,
+  "persistent_numeric_bytes": 397312,
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.872457069077205,
+      "nmi": 0.8352833420665501
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.9427523826450923,
+      "nmi": 0.9186840056551664
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.8984344493559959,
+      "nmi": 0.8714009900452595
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.4945309828681447,
+      "nmi": 0.4723831371593603
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.5593006239621146,
+      "nmi": 0.5441053151937031
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.8881935929479423,
+      "nmi": 0.8474681431342272
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "data_seed": 2026,
+    "projection_paired_within_repetition": true,
+    "projection_varies_across_repetitions": true,
+    "projection_seed": 47,
+    "model_seed": 47,
+    "causal_standardization_outside_timer": true,
+    "dataset_loaded_outside_timer": true,
+    "fresh_model_per_run": true,
+    "fresh_interpreter_per_run": false,
+    "gc_before_each_run": true,
+    "labels_used_online": false,
+    "known_k_macro_evaluation_only": 4
+  }
+}

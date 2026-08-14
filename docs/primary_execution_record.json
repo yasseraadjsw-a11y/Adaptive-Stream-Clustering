@@ -1,0 +1,23 @@
+{
+  "declared_primary_queue_runs": 200,
+  "datasets": 4,
+  "methods": 5,
+  "seeds": 10,
+  "fixed_seeds": [
+    7,
+    13,
+    19,
+    23,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53
+  ],
+  "preserved_execution_record": {
+    "primary_queue": "200/200 combinations enumerated",
+    "broader_validator": "280 expected, 0 missing, 0 invalid, passed=true"
+  },
+  "note": "This execution-completion index records the declared dataset, method, and seed combinations for the original multi-dataset study."
+}

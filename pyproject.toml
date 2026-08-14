@@ -1,0 +1,21 @@
+[project]
+name = "adaptive-stream-clustering"
+version = "1.1.0"
+description = "Adaptive sketch-based stream clustering for high-dimensional data streams under representation drift"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "numpy>=1.26,<1.27",
+  "scipy>=1.11,<1.12",
+  "scikit-learn>=1.4,<1.5",
+  "matplotlib>=3.8,<3.9",
+  "pandas>=2.1,<2.3",
+  "psutil>=5.9,<6.1",
+  "numba>=0.59,<0.61"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+pythonpath=["src"]
+testpaths=["tests"]

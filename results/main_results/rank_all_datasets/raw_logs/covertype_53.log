@@ -1,0 +1,1 @@
+{"dataset": "covertype", "method": "proposed", "seed": 53, "ari": 0.0019214064650250873, "nmi": 0.004256357895735337, "elapsed_seconds": 4.405778599000769, "rank_mean": 4.607626230009097, "rank_std": 1.3484230762775018, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.46629501628193565}

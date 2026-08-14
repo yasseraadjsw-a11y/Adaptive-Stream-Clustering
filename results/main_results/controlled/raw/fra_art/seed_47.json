@@ -1,0 +1,81 @@
+{
+  "method": "fra_art",
+  "seed": 47,
+  "ari": 0.6776701558137955,
+  "nmi": 0.7744496661919296,
+  "runtime_ms_per_1000": 2943.2553442226586,
+  "online_seconds_shared_deterministic": 26.17120047800563,
+  "macro_seconds": 0.3180976199982979,
+  "persistent_numeric_mb": 31.1180419921875,
+  "allocated_numeric_mb": 87.95928955078125,
+  "incremental_peak_rss_mb": 125.20703125,
+  "peak_process_rss_mb": 311.54296875,
+  "diagnostics": {
+    "categories": 3184,
+    "prototype_bytes": 26083328,
+    "category_raw_summary_bytes": 6546304,
+    "persistent_numeric_bytes": 32629632,
+    "allocated_numeric_bytes": 92232000
+  },
+  "chunks": [
+    {
+      "start": 1000,
+      "end": 2000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 2000,
+      "end": 3000,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    {
+      "start": 3000,
+      "end": 4000,
+      "ari": 0.476012198778166,
+      "nmi": 0.6078334645032476
+    },
+    {
+      "start": 4000,
+      "end": 5000,
+      "ari": 0.7122783806271206,
+      "nmi": 0.8473059976883782
+    },
+    {
+      "start": 5000,
+      "end": 6000,
+      "ari": 0.7159258812665028,
+      "nmi": 0.853114645851239
+    },
+    {
+      "start": 6000,
+      "end": 7000,
+      "ari": 0.1679704790094874,
+      "nmi": 0.3377569487670803
+    },
+    {
+      "start": 7000,
+      "end": 8000,
+      "ari": 0.7110390994785545,
+      "nmi": 0.7701904925426281
+    },
+    {
+      "start": 8000,
+      "end": 9000,
+      "ari": 0.6381352073505326,
+      "nmi": 0.7793957801828636
+    }
+  ],
+  "protocol": {
+    "same_stream": true,
+    "n": 9000,
+    "d": 256,
+    "data_seed": 2026,
+    "model_seed": 47,
+    "labels_used_online": false,
+    "common_causal_standardization_outside_timing": true,
+    "shared_macro_evaluator_known_k": 4,
+    "implementation_scope": "author_implementation_common_protocol"
+  }
+}

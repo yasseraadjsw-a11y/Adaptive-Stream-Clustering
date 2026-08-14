@@ -1,0 +1,13 @@
+Dataset,Method,ARI,NMI,Execution_stage,Protocol_relation
+CoverType,Proposed,0.680000,0.610000,Original experiment,Same all-dataset protocol
+CoverType,TWStream,0.132825,0.249941,Modern-method extension,Same all-dataset protocol
+CoverType,FRA-ART,0.136032,0.207666,Modern-method extension,Same all-dataset protocol
+Electricity,Proposed,0.720000,0.660000,Original experiment,Same all-dataset protocol
+Electricity,TWStream,0.021445,0.025872,Modern-method extension,Same all-dataset protocol
+Electricity,FRA-ART,0.006123,0.007396,Modern-method extension,Same all-dataset protocol
+TweetEval,Proposed,0.390000,0.420000,Original experiment,Same all-dataset protocol
+TweetEval,TWStream,0.000046,0.004062,Modern-method extension,Same all-dataset protocol
+TweetEval,FRA-ART,0.005115,0.005841,Modern-method extension,Same all-dataset protocol
+Synthetic GMM,Proposed,0.820000,0.790000,Original experiment,Same all-dataset protocol
+Synthetic GMM,TWStream,0.941983,0.947800,Modern-method extension,Same all-dataset protocol
+Synthetic GMM,FRA-ART,0.625219,0.709763,Modern-method extension,Same all-dataset protocol

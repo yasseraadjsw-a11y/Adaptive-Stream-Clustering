@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/Du-Team/TWStream.git",
+  "commit": "4e084d1ce29f116fc9896ffb270640d8fb24348f",
+  "java_source_class": "edu.jsnu.sunjr.TWStream",
+  "official_source_defaults": {
+    "gap_time": 100,
+    "alpha": 2,
+    "beta_rule": "1 - 2^(-lambda) + 0.0001"
+  },
+  "note": "The official/native adapter is separate from the source-aligned structural comparator used with the common weighted macro evaluator. Native TWStream may leave outlier points without a final cluster; the adapter preserves those as -1 and reports coverage."
+}

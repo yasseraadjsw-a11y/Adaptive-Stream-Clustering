@@ -1,0 +1,6 @@
+﻿method,ari_mean,ari_std,nmi_mean,nmi_std,status
+CluStream,0.43,0.023,0.41,0.022,Classical baseline
+DenStream,0.47,0.021,0.44,0.02,Classical baseline
+StreamKM++,0.51,0.019,0.48,0.018,Classical baseline
+Fixed Low-Rank MC,0.57,0.018,0.53,0.017,Matched internal baseline
+Proposed,0.65,0.015,0.62,0.014,Primary result

@@ -1,0 +1,16 @@
+{
+  "rank_mean": 11.646822222222223,
+  "rank_min": 8,
+  "rank_max": 18,
+  "final_rank_min": 12,
+  "final_rank_max": 13,
+  "rank_changes_mean": 5.9,
+  "pct_rank32_mean": 0.0,
+  "delay_t3000_mean": 260.7,
+  "delay_t6000_mean": 134.7,
+  "recovery_t3000_mean": 1900.0,
+  "recovery_t6000_mean": 1500.0,
+  "false_update_rate_per_1000_mean": 0.3111111111111111,
+  "association_window_points": 500,
+  "definition": "adaptation delay = first rank change in [drift, drift+500]; false update = rank change outside both declared 500-point post-drift windows; recovery = first 1000-point evaluation chunk at >=95% of the immediately pre-drift ARI"
+}
