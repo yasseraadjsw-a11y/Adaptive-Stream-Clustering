@@ -19,15 +19,24 @@ def build_fig3(out: Path) -> None:
     fig, ax = plt.subplots(figsize=(8.3, 4.6))
     ax.bar(x - width / 2, d["ari_mean"], width, label="ARI")
     ax.bar(x + width / 2, d["nmi_mean"], width, label="NMI")
-    ax.set_xticks(x, d["method"], rotation=20, ha="right")
-    ax.set_ylim(0, 0.75); ax.set_ylabel("Submitted mean score"); ax.legend(loc="upper left")
-    fig.tight_layout(); fig.savefig(out / "Fig3_multidataset_quality.png", dpi=300); plt.close(fig)
+    labels = [str(v) for v in d["method"]]
+    ax.set_xticks(x, labels, rotation=20, ha="right")
+    ax.set_ylim(0, 0.75); ax.set_ylabel("Descriptive mean score"); ax.legend(loc="upper left")
+    fig.tight_layout()
+    canonical = out / "Fig3_multidataset_quality.png"
+    fig.savefig(canonical, dpi=300)
+    # Keep the historical top-level figure path synchronized with the canonical manuscript figure.
+    if out.resolve() == DEFAULT_OUT.resolve():
+        legacy = ROOT / "figures" / "multidataset_quality.png"
+        legacy.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(legacy, dpi=300)
+    plt.close(fig)
 
 
 def build_fig4(out: Path) -> None:
     d = pd.read_csv(ROOT / "results/main_results/controlled/method_summary.csv")
     x = np.arange(len(d)); width = 0.35
-    labels = ["Proposed", "Fixed", "TWStream", "FRA-ART"]
+    labels = ["Proposed", "Fixed Rank", "TWStream", "FRA-ART"]
     fig, ax = plt.subplots(figsize=(4.5, 4.2))
     ax.bar(x - width / 2, d["ari_mean"], width, yerr=d["ari_sd"], capsize=4, label="ARI")
     ax.bar(x + width / 2, d["nmi_mean"], width, yerr=d["nmi_sd"], capsize=4, label="NMI")

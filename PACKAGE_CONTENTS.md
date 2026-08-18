@@ -1,15 +1,37 @@
 # Package contents
 
-This practical release contains the study source code, one authoritative dataset-specific protocol configuration, protected manuscript-facing numerical sources, verified study assets, experiment/diagnostic runners, and verification utilities.
+This practical release contains the study source code, one authoritative
+dataset-specific protocol configuration, protected manuscript-facing numerical
+sources, verified study assets, experiment/diagnostic runners, and verification
+utilities.
 
-Evidence included in the package:
-- protected primary ARI/NMI mean±SD tables and the 200-combination primary execution index;
+Evidence includes:
+- protected multi-dataset ARI/NMI tables and the original 200-combination
+  execution index;
+- the documented matched TweetEval/Synthetic GMM release update;
 - 40 seed-level controlled-comparison records;
 - 60 seed-level ablation records;
-- 40 protected seed-level adaptive-rank diagnostic records; the fresh `run-rank` path derives any new rank evidence from the exact main Proposed engine;
-- drift, sensitivity, statistical-analysis, and resource evidence;
-- SHA-256 fingerprints for packaged study assets and the release manifest;
+- 40 seed-level adaptive-rank diagnostic records;
+- drift, sensitivity, statistics, timing, and resource evidence;
+- SHA-256 fingerprints for packaged study assets and the release manifest.
 
-Fresh executions are isolated under `results/execution_runs/` and cannot overwrite `results/main_results/`. The unified fresh runner covers all seven methods and creates seed-level and aggregate outputs solely from its new execution tree. The original results and the later modern-method extension remain protected study records and are not read by that runner.
+Fresh executions are isolated under `results/execution_runs/` and cannot
+overwrite `results/main_results/`. The unified fresh runner covers all seven
+methods and creates seed-level and aggregate outputs solely from its new
+execution tree.
 
-The complete Arabic technical map and GitHub upload checklist are provided in `docs/GITHUB_TECHNICAL_GUIDE_AR.md`. Journal-submission documents are intentionally distributed separately from this practical repository.
+The editor-round2 audit uses explicit metric names so that the manuscript
+post-initialization chunk-mean metric is not confused with the separate
+complete-window final-partition diagnostic.
+
+Journal-submission documents are distributed separately from the practical
+repository.
+
+## Round-2 release additions
+
+The package also contains:
+- explicit matched TweetEval/Synthetic GMM quality audit summaries;
+- an explicit rank-evidence scope table separating the round-2 full-stream rows from unaffected retained diagnostics;
+- rank-only release logs with no generic ARI/NMI fields;
+- a TweetEval provenance-boundary record for canonical 2,048-D versus packaged 256-D evidence;
+- synchronized canonical and legacy Figure 3 outputs.

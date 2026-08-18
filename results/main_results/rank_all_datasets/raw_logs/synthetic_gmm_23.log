@@ -1,1 +1,14 @@
-{"dataset": "synthetic_gmm", "method": "proposed", "seed": 23, "ari": 0.04204931208946893, "nmi": 0.04630333454628844, "elapsed_seconds": 0.2654856640001526, "rank_mean": 8.0, "rank_std": 0.0, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.617}
+{
+  "schema": "rank_diagnostic_release_v2",
+  "dataset": "synthetic_gmm",
+  "method": "proposed",
+  "seed": 23,
+  "elapsed_seconds": 0.60125732421875,
+  "rank_mean": 11.78811111111111,
+  "rank_std_within_run": 3.336147610125069,
+  "rank_max_observed": 17,
+  "sampling_acceptance": 0.5668888888888889,
+  "evidence_scope": "round-2 matched full-stream rank audit",
+  "quality_metrics_included": false,
+  "quality_note": "This rank log intentionally contains no ARI/NMI fields. Manuscript quality metrics are sourced from multidataset/editor audit files, not from rank diagnostics."
+}

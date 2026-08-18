@@ -1,12 +1,21 @@
-dataset,rank,observations,pct_observations
-covertype,4,3949108,68.55947445539329
-covertype,5,145000,2.517308667180545
-covertype,6,176012,3.0557002284674626
-covertype,7,320000,5.55543981722603
-covertype,8,1110000,19.27043186600279
-covertype,9,60000,1.0416449657298805
-electricity,4,399808,90.2256725040621
-electricity,5,3312,0.747427333453692
-electricity,8,40000,9.026900162484203
-tweeteval_sentiment,8,578990,100.0
-synthetic_gmm,8,80000,100.0
+dataset,rank,observations,pct_observations,evidence_scope
+covertype,4,3949108,68.55947445539329,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+covertype,5,145000,2.517308667180545,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+covertype,6,176012,3.0557002284674626,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+covertype,7,320000,5.55543981722603,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+covertype,8,1110000,19.27043186600279,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+covertype,9,60000,1.0416449657298803,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+electricity,4,399808,90.2256725040621,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+electricity,5,3312,0.747427333453692,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+electricity,8,40000,9.026900162484203,retained original dataset-specific rank diagnostic; not re-run in round-2 audit
+tweeteval_sentiment,8,598990,100.0,round-2 matched full-stream rank audit
+synthetic_gmm,8,32597,36.21888888888889,round-2 matched full-stream rank audit
+synthetic_gmm,10,3096,3.44,round-2 matched full-stream rank audit
+synthetic_gmm,11,11090,12.322222222222225,round-2 matched full-stream rank audit
+synthetic_gmm,12,4748,5.275555555555556,round-2 matched full-stream rank audit
+synthetic_gmm,13,8669,9.632222222222222,round-2 matched full-stream rank audit
+synthetic_gmm,14,8017,8.907777777777778,round-2 matched full-stream rank audit
+synthetic_gmm,15,7329,8.143333333333333,round-2 matched full-stream rank audit
+synthetic_gmm,16,7029,7.81,round-2 matched full-stream rank audit
+synthetic_gmm,17,3472,3.8577777777777778,round-2 matched full-stream rank audit
+synthetic_gmm,18,3953,4.392222222222222,round-2 matched full-stream rank audit

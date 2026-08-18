@@ -1,0 +1,7 @@
+comparison,metric,mean_difference_proposed_minus_comparator,wins_proposed,losses_proposed,ties,wilcoxon_statistic,raw_p,holm_adjusted_p_6_tests
+Proposed vs Fixed Rank,ARI,0.034218827323109414,8,2,0,3.0,0.009765625,0.048828125
+Proposed vs Fixed Rank,NMI,0.03492027585625973,10,0,0,0.0,0.001953125,0.01171875
+Proposed vs TWStream,ARI,0.016136675034030056,7,3,0,18.0,0.375,0.75
+Proposed vs TWStream,NMI,-0.012499407053823519,5,5,0,24.0,0.76953125,0.76953125
+Proposed vs FRA-ART,ARI,0.1335159065809445,8,2,0,3.0,0.009765625,0.048828125
+Proposed vs FRA-ART,NMI,0.06134944181673121,8,2,0,12.0,0.130859375,0.392578125

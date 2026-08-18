@@ -1,0 +1,5 @@
+dataset_id,Dataset,n_seeds,diagnostic_observations_total,expected_full_stream_total,coverage_pct,evidence_scope,round2_role
+covertype,CoverType,10,5760120,5810120,99.139433,retained original dataset-specific rank diagnostic,not part of the round-2 matched re-verification
+electricity,Electricity,10,443120,453120,97.793079,retained original dataset-specific rank diagnostic,not part of the round-2 matched re-verification
+tweeteval_sentiment,TweetEval,10,598990,598990,100.000000,round-2 matched full-stream rank audit,affected by editor Comment 1
+synthetic_gmm,Synthetic GMM,10,90000,90000,100.000000,round-2 matched full-stream rank audit,affected by editor Comment 1

@@ -1,143 +1,135 @@
-# الدليل التقني الكامل للمستودع والنتائج
+# الدليل التقني للمستودع والنتائج
 
-## 1. نطاق هذا المستودع
+## 1. نطاق المستودع
 
-هذا المستودع هو الحزمة العملية للدراسة: كود الطرق، إعدادات التجارب، بيانات الدراسة المضمنة، النتائج المعتمدة، الأدلة التفصيلية المتاحة، أدوات إعادة التنفيذ، وفحوص السلامة. مواد التسليم للمجلة محفوظة خارج المستودع العملي في المجلد المستقل `01_Journal_Submission` ضمن حزمة التسليم الكاملة.
+المستودع هو الحزمة العملية للدراسة: الكود، الإعدادات، بيانات الدراسة، النتائج
+المحمية، أدلة التدقيق، وأدوات إعادة التنفيذ والتحقق. ملفات تسليم المجلة تبقى
+منفصلة عن جذر المستودع.
 
-يجب التمييز بين مسارين لا يكتب أحدهما فوق الآخر:
+المساران الرئيسيان:
+- `results/main_results/`: النتائج المحمية المستخدمة في الإصدار.
+- `results/execution_runs/`: مخرجات أي تشغيل جديد، ولا يجوز أن تكتب فوق
+  `main_results`.
 
-- `results/main_results/`: سجل النتائج المعتمد والمستخدم في جداول الدراسة؛ محمي من الكتابة بواسطة أدوات التنفيذ.
-- `results/execution_runs/`: الوجهة الوحيدة لأي تشغيل جديد. هذا المجلد مستبعد من Git، باستثناء ملف الشرح، حتى لا تختلط عمليات إعادة التنفيذ بالنتائج المعتمدة.
-
-## 2. خريطة المستودع
+## 2. خريطة أساسية
 
 | المسار | المحتوى |
 |---|---|
-| `src/asc_stream/` | Proposed، Fixed Rank، الطرق المقارنة، تحميل البيانات، التقييم، وضوابط مسارات الإخراج |
-| `experiments/` | مشغلات التجارب والتجميع من ملفات التشغيل الجديدة |
-| `configs/datasets/` | المصدر الوحيد لإعدادات كل داتا سيت في التجربة متعددة البيانات |
-| `configs/controlled_representation_drift.json` | إعدادات تجربة الانحراف المضبوطة |
-| `data/` | بيانات الدراسة المضمنة وManifest بصماتها ومسار تجهيز المصادر العامة |
-| `results/main_results/` | النتائج المعتمدة ومصادر الجداول والتحليلات |
-| `results/execution_runs/` | نتائج أي تنفيذ جديد؛ لا تُرفع تلقائياً مع Git |
-| `docs/` | وصف سجل التنفيذ والبروتوكول الموحد والأدلة |
-| `tests/` و`scripts/` | الاختبارات وفحوص البروتوكول والبيانات والنتائج والـManifest |
-| `.github/workflows/ci.yml` | فحص آلي على Ubuntu وWindows باستخدام Python 3.11 |
+| `src/asc_stream/` | Proposed وFixed Rank والطرق المقارنة |
+| `experiments/` | مشغلات التجارب |
+| `configs/datasets/` | إعدادات الداتا سيت الأساسية |
+| `configs/controlled_representation_drift.json` | التجربة المضبوطة |
+| `data/` | بيانات الدراسة وManifest البصمات |
+| `results/main_results/` | مصادر جداول الإصدار |
+| `results/editor_round2_audit/` | أدلة التحقق التحريري |
+| `results/execution_runs/` | التشغيلات الجديدة |
+| `tests/` و`scripts/` | الاختبارات وفحوص السلامة |
 
-## 3. البيانات المضمنة
+## 3. البيانات
 
-يسجل `data/study_assets_manifest.json` المسار والحجم والشكل وSHA-256 لكل أصل دراسة. الأصول الرئيسية هي:
+الأصول المضمنة:
+- CoverType: 581,012 × 54
+- Electricity: 45,312 × 8
+- TweetEval packaged study representation: 59,899 × 256
+- Synthetic GMM: 9,000 × 256
 
-| الداتا سيت | الشكل المضمن |
-|---|---:|
-| CoverType | 581,012 × 54 |
-| Electricity | 45,312 × 8 |
-| TweetEval study representation | 59,899 × 256 |
-| Synthetic GMM | 9,000 × 256 |
+توجد بصمات SHA-256 في `data/study_assets_manifest.json`.
 
-`python main.py verify-data` يتحقق من الأصول المضمنة مباشرة. أما `python main.py verify-canonical-data` فهو فحص إضافي لمسار المصدر العام بعد تنفيذ `setup-data`. تمثيل TweetEval العام القابل لإعادة التجهيز يستخدم 2048 سمة sparse، في حين أن أصل الدراسة المضمن هو تمثيل 256-D المثبت في Manifest؛ ولا يجوز الخلط بين المستويين.
+### TweetEval
 
-## 4. خريطة النتائج المعتمدة
+يجب التمييز بين مستويين:
+1. المسار العام canonical: train → validation → test، وHashingVectorizer
+   sparse بعدد 2048 سمة، ثم إسقاط النموذج.
+2. المسار الذاتي study: أصل دراسة ثابت 59,899 × 256، مثبت بالبصمة، ويعامل
+   كتمثيل projected محفوظ مسبقاً عند واجهة الإسقاط.
 
-| جزء الدراسة | المصدر الرقمي |
-|---|---|
-| التجربة الأصلية متعددة البيانات: Proposed وFixed Rank وCluStream وDenStream وStreamKM++ | `results/main_results/multidataset/` |
-| الإضافة اللاحقة: TWStream وFRA-ART على البيانات الأربع وتحت بروتوكول الدراسة نفسه | `results/main_results/modern_methods_extension/` |
-| المقارنة المباشرة: Proposed الأصلي مع الطريقتين الحديثتين | `results/main_results/all_dataset_direct_comparison.csv` |
-| تجربة الانحراف المضبوطة | `results/main_results/controlled/` |
-| Ablation | `results/main_results/ablation/` |
-| تحليل الرتبة على البيانات الأربع | `results/main_results/rank_all_datasets/` |
-| تحليل الانحراف والاستعادة | `results/main_results/drift/` |
-| الإحصاء والحساسية والموارد | `statistics/` و`sensitivity/` و`resources/` تحت `main_results` |
+لا تدعي الحزمة أن ملف 256-D يمكن إعادة اشتقاقه تشفيرياً من 2048-D بمجرد وجوده.
+للتحقق الصارم من المصدر العام استخدم:
+`python main.py setup-data`
+ثم المسار canonical.
 
-نتائج التجربة الأصلية تبقى كما هي. نتائج TWStream وFRA-ART إضافة لاحقة ولا تستبدل أياً من النتائج الأصلية. المقارنة المباشرة تستخدم Proposed من السجل الأصلي وتضيف صفوف الطريقتين الحديثتين. فحص `scripts/verify_main_results.py` يتأكد من ثبات قيم Proposed، واتساق خريطة الإضافة الحديثة، وإعادة تجميع سجلات controlled وablation، وعدد سجلات rank، ومقامات الاستعادة 10/10 و6/10.
+## 4. خريطة النتائج
 
-## 5. إعادة التنفيذ الموحدة
+- `results/main_results/multidataset/`: جداول النتائج الأساسية.
+- `results/main_results/modern_methods_extension/`: TWStream وFRA-ART للسياق
+  الوصفي على البيانات الأربع.
+- `results/main_results/controlled/`: المقارنة المضبوطة ذات 40 تشغيلًا.
+- `results/main_results/ablation/`: 60 تشغيلًا.
+- `results/main_results/rank_all_datasets/`: تحليل الرتبة عبر أربع بيانات ×
+  عشر بذور.
+- `results/editor_round2_audit/`: التحقق المتطابق من TweetEval/Synthetic GMM
+  وفحوص الزمن والمقارنة الحديثة.
 
-المسار الرسمي لأي تنفيذ جديد هو:
+القيم المعتمدة بعد التحقق:
+- TweetEval: Proposed = Fixed Rank في ARI/NMI والرتبة تبقى 8.
+- Synthetic GMM Proposed: ARI 0.765705 ± 0.068506، NMI 0.779494 ± 0.060014،
+  rank 11.6468 ± 0.3060، range 8–18.
+- Synthetic GMM Fixed Rank: ARI 0.722984 ± 0.059987،
+  NMI 0.736730 ± 0.056811، والرتبة 8.
+
+## 5. تعريف مقياس الجودة المتطابق
+
+في TweetEval وSynthetic GMM المتطابقين، القيم المبلّغ عنها في Table 5 /
+Appendix B ليست جودة تقسيم نهائي واحد. لكل seed:
+- أول 1000 مشاهدة هي initialization.
+- يحسب ARI/NMI على مقاطع التقييم اللاحقة بحجم 1000 مشاهدة.
+- تؤخذ القيمة الحسابية المتوسطة لهذه المقاطع.
+- بعد ذلك تلخص البذور العشر بالمتوسط ± SD.
+
+أما `complete_window_final_*` فهو تشخيص مستقل محفوظ للتدقيق، ولا يستبدل مقياس
+المخطوطة.
+
+## 6. إعادة التنفيذ الموحدة
 
 ```bash
 python main.py run-primary
 ```
 
-وهو ينفذ مصفوفة واحدة من 280 تشغيلًا:
+ينفذ 4 datasets × 7 methods × 10 seeds = 280 تشغيلًا. يكتب فقط داخل
+`results/execution_runs/`.
 
-- 4 datasets؛
-- 7 methods: Proposed، Fixed Rank، CluStream، DenStream، StreamKM++، TWStream، FRA-ART؛
-- 10 seeds: 7، 13، 19، 23، 31، 37، 41، 43، 47، 53.
-
-كل طريقة تستخدم محمل البيانات وترتيب المشاهدات والـseed والتقييم المشترك نفسه. التحويلات التي تتطلبها طريقة بعينها تُطبّق بعد المعالجة المشتركة، وتُسجل قيمها المحلولة داخل ملف التشغيل الخام. لا يقرأ هذا المسار أرقامًا من `results/main_results/`.
-
-بعد اكتمال المصفوفة المحددة، ينشئ التجميع من ملفات التنفيذ الجديدة فقط:
-
-- `execution_manifest.json`؛
-- `seedwise_results.csv`؛
-- `dataset_method_summary.csv`؛
-- `overall_equal_dataset_summary.csv`.
-
-أوامر التحكم:
-
+أوامر مفيدة:
 ```bash
 python main.py run-primary --dry-run
 python main.py run-primary --resume
-python main.py run-primary --dataset electricity --method proposed --seed 7
+python main.py run-rank
+python main.py run-controlled
 ```
 
-`--dry-run` يعرض الخطة ولا يشغل تجربة. `--resume` يتجاوز ملفات التشغيل الجديدة المكتملة. لا تُستبدل الملفات الموجودة افتراضياً، و`--force` لا يعمل إلا داخل `results/execution_runs/`. أما `--max-observations` فهو للاختبار الدخاني فقط وتُوسم مخرجاته `full_stream=false`، فلا تُعامل كنتيجة دراسة كاملة.
-
-## 6. تحليل الرتبة
-
-`python main.py run-rank` يبني Proposed نفسه المستخدم في `run-primary` ويستعمل المقيم نفسه، ثم يستخرج تفاصيل الرتبة من instance النموذج الرئيسي. لا توجد خوارزمية أو rank controller تشخيصية مستقلة. تذهب النتائج الجديدة إلى `results/execution_runs/rank_diagnostic/`.
-
-## 7. التحقق قبل الاستخدام أو النشر
-
-البيئة المدعومة هي Python 3.11. على Linux أو macOS:
+## 7. التحقق
 
 ```bash
-python -m pip install -r requirements.txt
 python main.py verify
 ```
 
-وعلى Windows تُستخدم الأوامر نفسها من PowerShell أو الملف `SETUP_AND_VERIFY_WINDOWS.bat`.
+يفحص البروتوكول والبيانات والنتائج والبصمات والـManifest والاختبارات.
 
-يشمل `verify`:
-
-1. سلامة بنية الحزمة واعتمادياتها؛
-2. اتساق بروتوكول الدراسة؛
-3. أشكال وبصمات بيانات الدراسة المضمنة؛
-4. إعادة تجميع الأدلة الرقمية واتساق جداول النتائج؛
-5. 179 بصمة للنتائج المحمية؛
-6. Manifest ثنائي الاتجاه لكل ملفات الإصدار؛
-7. ترجمة مصادر Python والاختبارات.
-
-لا يقوم `verify` بتشغيل مصفوفة التجارب. تشغيل التجارب لا يحدث إلا عند طلب أحد أوامر `run-*` صراحة.
-
-## 8. رفع المشروع إلى GitHub
-
-ارفع محتويات مجلد `02_GitHub_Repository` نفسه ليكون جذر المستودع، لا ترفع المجلد الأب ولا ملفات المجلة. مثال:
-
+بعد أي تحديث مقصود لأدلة الإصدار:
 ```bash
-git init
-git add .
-git status
-git commit -m "Release complete adaptive stream clustering research package"
-git branch -M main
-git remote add origin YOUR_REPOSITORY_URL
-git push -u origin main
+python scripts/verify_main_results.py
+python scripts/verify_protected_results.py --update-reference
+python scripts/generate_manifest.py
+python main.py verify
 ```
 
-قبل `git commit` يجب أن يظهر مجلد `results/main_results/rank_all_datasets/raw_logs/` ضمن الملفات المضافة؛ يوجد استثناء صريح له في `.gitignore`. يجب ألا تظهر cache files أو ملفات `results/execution_runs/` الجديدة.
+يجب تنفيذ الفحص الدلالي للنتائج **قبل** اعتماد بصمات النتائج الجديدة.
 
-أكبر أصل منفرد في الحزمة أصغر من حد GitHub البالغ 100 MiB للملف الواحد. عند استعمال واجهة الويب قد يكون رفع عدد كبير من الملفات غير عملي؛ يفضّل `git push` من سطر الأوامر.
+## 8. الجولة الثانية
 
-لم تُضف رخصة استخدام تلقائياً؛ اختيار الرخصة قرار صاحب البحث. يمكن إبقاء المستودع خاصاً إلى حين اختيارها أو إضافة ملف `LICENSE` مناسب.
+يوثق `docs/ROUND2_CORRECTION_20260817.md` التحقق المتطابق والتغييرات التي
+أصبحت جزءاً من إصدار النتائج. لا يقدم الملف تخميناً عن سبب برمجي تاريخي؛
+المهم هو أن القيم النهائية المستخدمة في المخطوطة مرتبطة مباشرة بالتنفيذ
+المتطابق الموثق.
 
-## 9. حدود التفسير الصحيح
+## 9. قبل الرفع إلى GitHub
 
-- لا تُنشأ قيم خام تاريخية من المتوسطات والانحرافات المعيارية.
-- لا تُقرب نتائج تنفيذ جديد بغرض جعلها مساوية لرقم منشور.
-- لا تُكتب نتائج جديدة فوق السجل المعتمد.
-- فهرس `docs/primary_execution_index.csv` يوثق 200 توليفة للتجربة الأصلية، أما المسار التنفيذي الموحد الحالي فينشئ 280 سجلًا خامًا عند تشغيله بالكامل.
-- ملفات المجلة منفصلة عن الكود؛ الفصل مقصود حتى يبقى مستودع GitHub تقنياً ونظيفاً.
+- تأكد من عدم وجود `__pycache__` أو ملفات backup.
+- لا ترفع تشغيلات جديدة من `results/execution_runs/`.
+- راجع `git diff` قبل commit.
+- شغّل `python main.py verify`.
 
-للتفاصيل الإضافية راجع `REPRODUCIBILITY.md` و`RESULTS.md` و`METHOD_SOURCES.md` و`docs/UNIFIED_REEXECUTION_PROTOCOL.md` و`docs/PRIMARY_EXECUTION_RECORD.md`.
+## 10. نطاق Rank Diagnostic
+
+لا يجوز تفسير الصفوف الأربع في Table 10 على أنها إعادة full-stream موحدة أُجريت كلها في الجولة الثانية. TweetEval وSynthetic GMM هما الصفان اللذان أُعيدا التحقق منهما full-stream بسبب ملاحظة المحرر. CoverType وElectricity يحتفظان بrank diagnostic السابق. يحدد `results/main_results/rank_all_datasets/rank_evidence_scope.csv` التغطية العددية ونوع الدليل لكل صف.
+
+كما أزيلت ARI/NMI من ملفات rank release-facing حتى لا تختلط مع قيم Table 5/Appendix B. ويشرح `data/TWEETEVAL_STUDY_REPRESENTATION_PROVENANCE.md` حد الدليل بين 2048-D canonical و256-D packaged.

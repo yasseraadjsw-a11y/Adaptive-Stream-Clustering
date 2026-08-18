@@ -1,0 +1,30 @@
+{
+  "schema": "tweeteval_study_representation_provenance_v1",
+  "canonical_public_source": {
+    "repository": "cardiffnlp/tweeteval",
+    "pinned_commit": "4fbd22cd78421f05b1ecdb4fc5725bc7a7bd8f66",
+    "rows": 59899,
+    "vectorizer": "HashingVectorizer",
+    "n_features": 2048,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "alternate_sign": false,
+    "norm": "l2",
+    "storage": "CSR",
+    "role": "strict public-source reproducibility path before model projection"
+  },
+  "packaged_study_asset": {
+    "path": "data/rank_validation/processed/tweeteval_sentiment.npz",
+    "rows": 59899,
+    "features": 256,
+    "sha256": "83c8b3c392ceae11560bab9a8f5e13c6272161787e789e62202c4c1a985c94b6",
+    "role": "fixed packaged projected study representation used by study-mode audit/re-execution tooling"
+  },
+  "derivation_claim": {
+    "canonical_2048_to_packaged_256_chain_verified_by_current_release": false,
+    "statement": "The current release verifies the 256-D asset identity but does not claim that the available files independently prove its derivation from the canonical 2048-D matrix.",
+    "strict_reproduction": "Use setup-data and the canonical execution path when public-source provenance is required."
+  }
+}

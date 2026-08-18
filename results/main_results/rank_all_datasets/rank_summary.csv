@@ -1,5 +1,5 @@
-﻿Dataset,Mean Rank,SD,Min Rank,Max Rank,Sketch Acceptance (%)
-CoverType,5.0758,0.2940,4,9,47.30
-Electricity,4.3686,0.0236,4,8,56.40
-TweetEval,8.0000,0.0000,8,8,60.59
-Synthetic GMM,8.0000,0.0000,8,8,60.83
+Dataset,Mean Rank,SD,Min Rank,Max Rank,Sketch Acceptance (%)
+CoverType,5.0758,0.2940,4,9,47.3000
+Electricity,4.3686,0.0236,4,8,56.4000
+TweetEval,8.0000,0.0000,8,8,57.3600
+Synthetic GMM,11.6468,0.3060,8,18,56.2200

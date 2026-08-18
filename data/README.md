@@ -2,53 +2,66 @@
 
 ## Packaged study assets
 
-The release includes the complete packaged study arrays required for self-contained execution. Their SHA-256 digests, sizes and expected shapes are recorded in:
+The self-contained release includes the complete packaged study arrays required
+by study-mode execution. Their SHA-256 digests, sizes, and expected shapes are
+recorded in:
 
-```text
-data/study_assets_manifest.json
-```
+`data/study_assets_manifest.json`
 
 Verify them with:
 
 ```bash
-python main.py data-status
+python main.py verify-data
 ```
 
 ## Public datasets
 
-The public-source acquisition/preparation workflow is also included:
+The public-source acquisition/preparation workflow is:
 
 ```bash
 python main.py setup-data
 ```
 
 Declared sources:
-
-- CoverType — UCI Machine Learning Repository, dataset 31.
+- CoverType — UCI Machine Learning Repository.
 - Electricity — OpenML dataset 151.
-- TweetEval sentiment — official Cardiff NLP repository pinned to commit `4fbd22cd78421f05b1ecdb4fc5725bc7a7bd8f66`.
+- TweetEval sentiment — official Cardiff NLP repository pinned by the study
+  code to a fixed commit.
 
-Downloaded files are recorded in `data/public/raw/acquisition_manifest.json`. Prepared files are written under `data/public/processed/` with a preprocessing manifest. TweetEval uses CSR storage for the 2048-dimensional hashed representation.
+TweetEval public-source preparation uses train → validation → test order and a
+stateless 2,048-dimensional word 1–2 gram HashingVectorizer stored in CSR form.
 
-`python main.py verify-data` verifies the packaged study assets and succeeds out of the box. Use `python main.py verify-canonical-data` after `setup-data` for the additional public-source provenance check.
+## TweetEval packaged study representation
+
+For self-contained study-mode execution, the release also includes:
+
+`data/rank_validation/processed/tweeteval_sentiment.npz`
+
+This fixed asset contains 59,899 × 256 features and is fingerprinted in
+`data/study_assets_manifest.json`. Study-mode execution treats it as an already
+projected representation at the model projection interface.
+
+The 256-D packaged asset and the canonical 2,048-D public-source representation
+are therefore two explicitly distinguished evidence levels. The package
+verifies the identity of the 256-D asset itself; strict public-source provenance
+reproduction uses `setup-data` followed by the canonical execution path.
 
 ## Controlled representation-drift stream
 
-`data/controlled/` contains the fixed 9,000×256 representation-drift stream and its causally standardized form. The data seed is 2026 and the declared change points are t=3000 and t=6000. The original Synthetic GMM benchmark uses the same fixed realized stream; the reviewer-requested controlled analysis adds time-resolved measurements and comparison methods.
+`data/controlled/` contains the fixed 9,000 × 256 representation-drift stream
+and its causally standardized form. The data seed is 2026 and the declared
+change points are t=3000 and t=6000. The Synthetic GMM benchmark and the
+controlled time-resolved analysis use the same fixed realization.
 
-Rebuild it from the declared generator, report byte identity when the environment reproduces it, and verify machine-precision numerical equivalence across supported numerical-library builds:
-
-```bash
-python main.py rebuild-controlled-data
-```
-
-The rebuilt files are written under `results/execution_runs/controlled_data/`; the fixed study files are never overwritten.
+Rebuilt files are written under `results/execution_runs/controlled_data/`; fixed
+study files are never overwritten.
 
 ## Rank-study assets
 
-`data/rank_validation/processed/` contains the full packaged arrays used by the study tooling. Their integrity is checked through `data/study_assets_manifest.json`. New rank-diagnostic executions are written separately under `results/execution_runs/rank_diagnostic/`.
+`data/rank_validation/processed/` contains the packaged arrays used by the study
+tooling. New rank-diagnostic executions are written under
+`results/execution_runs/rank_diagnostic/`.
 
+## Provenance boundary file
 
-Data checks:
-- `python main.py verify-data` — packaged study assets (self-contained).
-- `python main.py verify-canonical-data` — strict public-source provenance after `setup-data`.
+`TWEETEVAL_STUDY_REPRESENTATION_PROVENANCE.md` and `.json` record the exact evidence boundary between the canonical 2,048-D public-source preparation and the SHA-256-verified 256-D packaged study representation. The current release verifies the cached study artifact itself but does not claim that the distributed files independently prove its derivation from the canonical matrix.

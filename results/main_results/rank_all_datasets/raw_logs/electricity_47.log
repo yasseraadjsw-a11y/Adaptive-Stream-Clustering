@@ -1,1 +1,14 @@
-{"dataset": "electricity", "method": "proposed", "seed": 47, "ari": -0.0015624830868372975, "nmi": 0.00015224012718355762, "elapsed_seconds": 0.5103641169998809, "rank_mean": 4.361076006499368, "rank_std": 1.1462670472136678, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.5415342514124294}
+{
+  "schema": "rank_diagnostic_release_v2",
+  "dataset": "electricity",
+  "method": "proposed",
+  "seed": 47,
+  "elapsed_seconds": 0.5103641169998809,
+  "rank_mean": 4.361076006499368,
+  "rank_std_within_run": 1.1462670472136678,
+  "rank_max_observed": 8,
+  "sampling_acceptance": 0.5415342514124294,
+  "evidence_scope": "retained original dataset-specific rank diagnostic; not re-run in round-2 audit",
+  "quality_metrics_included": false,
+  "quality_note": "This rank log intentionally contains no ARI/NMI fields. Manuscript quality metrics are sourced from multidataset/editor audit files, not from rank diagnostics."
+}

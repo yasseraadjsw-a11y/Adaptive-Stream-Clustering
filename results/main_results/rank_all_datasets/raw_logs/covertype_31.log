@@ -1,1 +1,14 @@
-{"dataset": "covertype", "method": "proposed", "seed": 31, "ari": 0.020198948550692025, "nmi": 0.033448911765001886, "elapsed_seconds": 4.665822330999617, "rank_mean": 5.501704825593912, "rank_std": 1.889289297635721, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.46921922438779234}
+{
+  "schema": "rank_diagnostic_release_v2",
+  "dataset": "covertype",
+  "method": "proposed",
+  "seed": 31,
+  "elapsed_seconds": 4.665822330999617,
+  "rank_mean": 5.501704825593912,
+  "rank_std_within_run": 1.889289297635721,
+  "rank_max_observed": 8,
+  "sampling_acceptance": 0.4692192243877923,
+  "evidence_scope": "retained original dataset-specific rank diagnostic; not re-run in round-2 audit",
+  "quality_metrics_included": false,
+  "quality_note": "This rank log intentionally contains no ARI/NMI fields. Manuscript quality metrics are sourced from multidataset/editor audit files, not from rank diagnostics."
+}

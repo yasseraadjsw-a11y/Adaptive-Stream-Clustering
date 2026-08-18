@@ -1,0 +1,8 @@
+{
+  "schema": "descriptive_macro_summary_v2",
+  "ari_mean": "arithmetic mean of the four dataset-level ARI means",
+  "nmi_mean": "arithmetic mean of the four dataset-level NMI means",
+  "ari_std": "compatibility field: arithmetic mean of dataset-level ARI SDs; not pooled SD, not a confidence interval, not used for inference",
+  "nmi_std": "compatibility field: arithmetic mean of dataset-level NMI SDs; not pooled SD, not a confidence interval, not used for inference",
+  "inferential_source": "results/main_results/controlled/ and results/editor_round2_audit/comment4_*"
+}

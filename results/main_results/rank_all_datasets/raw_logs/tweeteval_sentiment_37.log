@@ -1,1 +1,14 @@
-{"dataset": "tweeteval_sentiment", "method": "proposed", "seed": 37, "ari": -0.001579355165415115, "nmi": 0.0014257606803486952, "elapsed_seconds": 3.5516104479993373, "rank_mean": 8.0, "rank_std": 0.0, "rank_max_observed": 8, "pct_rank_at_allowed_max": 0.0, "sampling_acceptance": 0.6080735905440825}
+{
+  "schema": "rank_diagnostic_release_v2",
+  "dataset": "tweeteval_sentiment",
+  "method": "proposed",
+  "seed": 37,
+  "elapsed_seconds": 22.15846991539001,
+  "rank_mean": 8.0,
+  "rank_std_within_run": 0.0,
+  "rank_max_observed": 8,
+  "sampling_acceptance": 0.5734319437720162,
+  "evidence_scope": "round-2 matched full-stream rank audit",
+  "quality_metrics_included": false,
+  "quality_note": "This rank log intentionally contains no ARI/NMI fields. Manuscript quality metrics are sourced from multidataset/editor audit files, not from rank diagnostics."
+}

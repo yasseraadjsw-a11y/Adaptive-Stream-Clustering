@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-17",
+  "seeds": [
+    7,
+    13,
+    19,
+    23,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53
+  ],
+  "tweet_eval": {
+    "proposed_equals_fixed_seedwise": true,
+    "rank_mean": 8.0,
+    "rank_sd_between": 0.0,
+    "rank_range": [
+      8,
+      8
+    ],
+    "admission_pct": 57.36,
+    "ari_mean_window": -0.0005419276994656073,
+    "ari_sd_window": 0.00042372967334450214,
+    "nmi_mean_window": 0.0016572196556435,
+    "nmi_sd_window": 0.0005225944991594218
+  },
+  "synthetic_gmm": {
+    "proposed_rank_mean": 11.646822222222223,
+    "rank_sd_between": 0.305963221652726,
+    "rank_range": [
+      8,
+      18
+    ],
+    "admission_pct": 56.223333,
+    "proposed_ari_mean_window": 0.7657046381354713,
+    "proposed_ari_sd_window": 0.06850643157445527,
+    "proposed_nmi_mean_window": 0.7794935738083602,
+    "proposed_nmi_sd_window": 0.060014225077355016,
+    "fixed_ari_mean_window": 0.722984045183159,
+    "fixed_ari_sd_window": 0.05998704748635777,
+    "fixed_nmi_mean_window": 0.7367303008939136,
+    "fixed_nmi_sd_window": 0.056810592370771656
+  },
+  "runtime_note": "Headline runtime is median over per-run (online + macro) totals; preprocessing is measured separately and excluded.",
+  "controlled_recent_methods": "4 methods x 10 seeds = 40 raw runs; exact paired Wilcoxon/Holm statistics retained in editor-round2 evidence.",
+  "metric_scope_note": "Manuscript dataset-level ARI/NMI uses post-initialization 1000-observation evaluation-chunk means; complete-window final partition is a separate audit diagnostic."
+}
